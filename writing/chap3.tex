@@ -1,0 +1,97 @@
+% Updated 210719: 1932
+\chapter{METHODOLOGY}
+
+This chapter is composed of five main sections. Section 3.1 presents an overview of the proposed methodology, including a detailed flowchart of the experimental protocol. This flowchart visually outlines each step of the research process, from initial data collection to final analysis, providing a clear, step-by-step guide to how the research will be conducted. It also helps in illustrating the sequence of experimental procedures and how different phases of the study are interconnected. Section 3.2 discusses the criteria and procedures for selecting participants or data sources. It explains the sampling strategies, inclusion and exclusion criteria, and the methods employed to ensure a representative sample, enhancing the validity of the research findings. Section 3.3 describes the data collection methods used in the study. This section elaborates on each technique employed, such as surveys, interviews, or observations, and justifies their use in effectively gathering the necessary data. Section 3.4 outlines the data analysis procedures. It details the analytical techniques and tools used to interpret the data, whether involving statistical analysis for quantitative data or thematic analysis for qualitative data. Finally, Section 3.5 covers the ethical considerations of the research. It includes details on how informed consent was obtained, the steps taken to ensure the confidentiality and anonymity of participants, and the handling of any potential ethical issues throughout the study.
+
+
+% This chapter is composed of five main sections. Section \ref{OverviewMethod} present an overview about the approach taken in this thesis in developing the SDS.
+% Section \ref{BN_Variables}  presents a detailed account of the derivation of the sleepiness indicator that will be used as input into the machine learning.  
+% %The first part present the approach to improve the subjective sleepiness estimation by using the combination of KDE and LR technique. The mathematical background of KDE and LR test is explained in detail. 
+% Next, Section \ref{TechniqueBN} presents the framework of the proposed SDS. 
+% Then, Section \ref{WorkaroundMissingKss} depicts the approach adopted to minimise the dependecy between the variable embedded in the proposed system as well as to increase the prediction horizon.
+% Lastly, the section \ref{ComparativeStudy} explains in detail the criteria for validation metric, the types of validation, and the considerations taken in selecting evaluation metric.
+
+\section{Overview Of The Proposed Methodology}
+
+% \label{OverviewMethod}
+%  \begin{figure}
+% 	\centering
+% 	\includegraphics[width=1\linewidth]{GeneralFlowChart}
+% 	\caption[Flowchart of the experimental protocol]
+% 	{Flowchart of the experimental protocol.}
+% 	\label{Fig: GeneralFlowChart}
+% \end{figure}
+
+
+This chapter presents the complete methodology for the fulfillment of the research objectives formulated in Chapter 1. Section 3.1 details the design methodology chosen to achieve these objectives, as illustrated in Figure 2.1. This figure provides a visual flowchart of the experimental protocol, which maps out each step in the research process, from initial hypothesis formulation to data collection, analysis, and conclusion drawing. This systematic depiction ensures clarity in the research approach and facilitates a better understanding of how each phase interlinks and contributes to the overall study goals.
+
+
+
+\subsection{Research Design}
+This subsection should describe the overall framework of the study, whether it is experimental, correlational, or descriptive, and explain the rationale behind the chosen design.
+
+\subsection{Participants}
+\subsubsection{Sampling Strategy}
+Detail how participants were selected, including the sampling methods and any demographic characteristics of interest.
+\subsubsection{Inclusion and Exclusion Criteria}
+Define the criteria for including or excluding participants in the study.
+
+\subsection{Data Collection Methods}
+\subsubsection{Quantitative Data}
+Describe the instruments and tools used to collect numerical data, such as surveys or standardized tests.
+\subsubsection{Qualitative Data}
+Discuss the methods used to gather textual or observational data, like interviews or focus groups.
+
+\subsection{Data Analysis}
+\subsubsection{Statistical Analysis}
+Outline the statistical techniques that will be applied to analyze the quantitative data.
+\subsubsection{Thematic Analysis}
+Describe how qualitative data will be analyzed, including any coding schemes or software used.
+
+\subsection{Ethical Considerations}
+Discuss how ethical issues were addressed, including participant consent and data privacy measures.
+
+\section{Results} % Example of another chapter
+\lipsum[1] % Filler text for demonstration
+
+
+
+
+\section{Preparation For Comparative Study}
+\label{ComparativeStudy}
+
+\subsection{Evaluation Criteria }
+\label{Data preparation}    
+
+You may explain about the dataset here.
+
+
+
+\subsection{Subject-wise Cross Validation for Performance Evaluation}    
+
+you may explain how to validate
+
+
+
+\subsection{Evaluation Metric}
+
+
+
+\subsubsection{Box-Whisker Plot}
+
+Box-whiskers plot and average \Fmeasure of the 24 selected subjects are reported in this study. Each box plot displays the median, the first and third quartile, as well as the minimum and maximum values. 
+The notches around each median give a rough idea on the significantly varied medians: if the notches do not overlap, the medians differ at  5\% significance level. 
+%An outlier (shown as red cross) is identified when a point exceeds the 25\superscripts{th} and 75\superscripts{th} percentiles. 
+%The interval corresponds to approximately ±2.7$\sigma$ and 99.3\% coverage upon normally distributed data. The plotted whisker extends to the adjacent value, whereby the most extreme data value is not an outlier [60].
+%% Please rephrase ^: From thesis: The Art of Heart Rate Variability Driver Fatigue Application
+
+
+\subsubsection{Statistical Analyses}
+
+The paired t-test was applied to ascertain the significant variance between the average \Fmeasure  of the proposed system and other techniques \cite{Demsar_2006}. The presence of outlier was determined by inspecting the boxplot for a value exceeding 1.5 box-length from the edge of the box in a boxplot. For each classifier performance, the normal distribution of the \Fmeasure  score was examined using Shapiro-Wilk’s test. As for \Fmeasure  performance that is not normally distributed, two t-tests were conducted by including and excluding the value of the outlier. The statistical significance was fixed at \LeqPointFive.
+
+
+\section{Chapter Summary}
+This chapter is composed up of five primary sections. The first section discussed the approach taken in this thesis in developing the system.
+
+
