@@ -661,7 +661,7 @@
 
 %\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % Dots for chapter entries in ToC
 \renewcommand{\cftdot}{} % Remove dots globally
-\renewcommand{\cftchapfont}{\fontsize{11}{13.6}\selectfont\textbf}  % Bold chapter text in ToC
+\renewcommand{\cftchapfont}{\fontsize{11}{13.6}\selectfont\bfseries}  % Bold chapter text in ToC
 \renewcommand{\cftchappagefont}{\normalsize} % Uppercase chapter page numbers in ToC
 \setlength{\cftbeforechapskip}{0ex} % No space before chapters in ToC
 \setlength{\cftbeforesecskip}{0ex}  % No space before sections in ToC
@@ -676,15 +676,17 @@
 
 
 \def\afterpreface{\newpage
-    \renewcommand{\cftchappresnum}{CHAPTER 
- }\renewcommand{\cftchapnumwidth}{25mm} % "CHAPTER:" prefix for chapter numbers in ToC
+    \renewcommand{\cftchappresnum}{CHAPTER }
+    \renewcommand{\cftchapnumwidth}{25mm} % "CHAPTER:" prefix for chapter numbers in ToC
 
     \renewcommand\contentsname{\centering
         \vspace*{-0.7in}  % Adjust vertical position of ToC title
         \PrefaceFontSection{TABLE OF CONTENTS}} % "LIST OF CONTENTS" heading
 %\renewcommand{\cfttoctitlefont}{\hfill \fontsize{12}{14}\bfseries}
     \pagestyle{plain} % Plain page style for ToC
-    %\tableofcontents  % Generate Table of Contents
+    \tableofcontents  % Generate Table of Contents
+    \clearpage
+    
     
 %%%%%   List of Figures
 
