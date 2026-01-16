@@ -1,39 +1,25 @@
 {
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.autoBuild.run": "onSave",
-
-  "latex-workshop.latex.tools": [
-    {
-      "name": "xelatex",
-      "command": "xelatex",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-output-directory=out",
-        "%DOC%"
-      ]
-    },
-    {
-      "name": "biber",
-      "command": "biber",
-      "args": [
-        "writing/out/%BASENAME%"
-      ]
-    }
-  ],
-
+  "latex-workshop.latex.outDir": "%DIR%/out",
   "latex-workshop.latex.recipes": [
     {
-      "name": "xelatex -> biber -> xelatex",
+      "name": "Build Script (writing/build.sh)",
       "tools": [
-        "xelatex",
-        "biber",
-        "xelatex"
+        "custom_build_script"
       ]
     }
   ],
-
+  "latex-workshop.latex.tools": [
+    {
+      "name": "custom_build_script",
+      "command": "bash",
+      "args": [
+        "%DIR%/build.sh"
+      ],
+      "env": {}
+    }
+  ],
   "[latex]": {
     "editor.formatOnSave": false
   }

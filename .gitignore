@@ -8,3 +8,12 @@ out/test.synctex.gz
 out/test.xdv
 /.idea
 writing/out
+writing/main.log
+writing/.latexmkrc
+writing/main.aux
+writing/main.bbl
+writing/main.bcf
+writing/main.blg
+writing/main.run.xml
+writing/main.suc
+writing/main.syc
