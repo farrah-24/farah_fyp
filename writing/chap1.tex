@@ -1,15 +1,41 @@
 \chapter{INTRODUCTION}
-helo world 
-% \RequirePackage{siunitx}
-A container with an initial volume of \SI{10}{\liter} expands to \SI{10.5}{\liter} when its temperature is increased from \SI{9}{\kelvin} to \SI{10}{\kelvin}. Calculate the coefficient of volume expansion of the container's material.
-
-Sleepiness is defined as the increased sleep propensity due to decrease in physiological arousal \parencite{Lal_2005as, Vassalli2009}. 	Sleepiness is a term that indicates the perceived need or readiness to sleep  \parencite{Amso_2015}.
-
-\par The introduction chapter of a thesis sets the stage for the entire research, providing the reader with essential background information, the context of the study, and a clear outline of the research objectives and significance. Each section within the introduction builds upon the previous one, gradually guiding the reader toward understanding the research problem and the purpose of the study. This section can be divided in multiple subsection to organize the information logically.
 
 \section{Background}
 
 In this section, you aim to provide the reader with the foundational knowledge necessary to understand the broader context of your research. This includes explaining key concepts, relevant terminology.
+
+\section{Machine Learning}
+
+Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computer systems to perform tasks without explicit instructions. Instead of being pre-programmed with rules, a machine learning system learns from data, identifies patterns, and makes decisions. This learning process allows the system to improve its performance over time as it is exposed to more data.
+
+The core idea behind machine learning is to build models that can automatically learn and make predictions or decisions. There are three main types of machine learning:
+
+\begin{itemize}
+    \item \textbf{Supervised Learning:} In this type of learning, the algorithm is trained on a labeled dataset, where each data point is tagged with the correct output. The goal is for the model to learn a mapping function that can predict the output for new, unseen data. Common applications include spam detection and image classification.
+    \item \textbf{Unsupervised Learning:} Unsupervised learning involves training a model on data that is not labeled. The algorithm tries to learn the underlying structure or distribution of the data. It is often used for clustering, dimensionality reduction, and anomaly detection.
+    \item \textbf{Reinforcement Learning:} Reinforcement learning is a type of machine learning where an agent learns to make decisions by taking actions in an environment to achieve a goal. The agent receives rewards or penalties for the actions it takes, which helps it to learn the best strategy, or policy, over time. It is commonly used in robotics and game playing.
+\end{itemize}
+
+Machine learning has become a transformative technology with a wide range of applications, 
+from personalized recommendations on streaming services to medical diagnosis and autonomous vehicles. 
+Its ability to extract insights from vast amounts of data has made it an indispensable tool in many industries.
+
+
+Figure \ref{fig:pm25_histogram} illustrates the distribution of Particulate Matter 2.5 (PM2.5) concentrations from 
+the collected data. The histogram provides a visual representation of the frequency of different PM2.5 levels. 
+The x-axis shows the concentration of PM2.5, while the y-axis indicates the number of times each concentration level was 
+observed. The blue bars represent the frequency of PM2.5 values within specific ranges, or bins. The smooth curve overlaid 
+on the bars is the Kernel Density Estimate (KDE), which provides a continuous estimate of the probability distribution of 
+the PM2.5 data. The vertical red dashed line marks the mean value of the PM2.5 concentrations, offering a measure of central tendency for the dataset. This visualization is crucial for understanding the characteristics of the air quality data, identifying the most common concentration ranges, and observing the overall shape and skewness of the distribution.
+
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=12cm]{images/histogram_PM2.5.png}
+	\caption{Distribution of PM2.5 concentrations. The histogram shows the frequency of different PM2.5 levels, with a Kernel Density Estimate (KDE) curve overlaid. The red dashed line indicates the mean value.}
+	\label{fig:pm25_histogram}
+\end{figure}
 
 \section{The Best Thing to Learn about Computer Programming}
 
