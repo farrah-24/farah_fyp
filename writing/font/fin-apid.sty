@@ -1,0 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fin-apid.sty
+% APID Variant (uses fin-common)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{fin-apid}[2025/03/14 v1.0 Fin Thesis Style (APID)]
+\RequirePackage{font/fin-common}
+
+% Choose the APID title page sentence + reduced preface
+\renewcommand{\titlepage}{
+  \fin@titlepage@template{THIS REPORT IS SUBMITTED FOR THE ASSIGNMENT OF APID}% 
+}
+
+\renewcommand{\beforepreface}{\fin@beforepreface@apid}
+

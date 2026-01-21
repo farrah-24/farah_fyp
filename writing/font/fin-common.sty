@@ -8,7 +8,7 @@
 % It is designed to be used with the 'report' document class.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ProvidesPackage{fin}[2025/03/14 v1.0 Fin Thesis Style]
+\ProvidesPackage{fin-common}[2025/03/14 v1.0 Fin Thesis Style (Common)]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Package Options & Preliminary Checks
@@ -26,7 +26,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Encoding and essential packages
-\RequirePackage[utf8]{inputenc}  % Support for utf8 input
+
 
 % Layout and formatting packages
 \RequirePackage{array}         % Enhanced array and tabular environments
@@ -64,7 +64,11 @@
 % Load listofsymbols with final option after tocloft
 \RequirePackage[final]{listofsymbols} % Load listofsymbols after tocloft
 
-\usepackage{indentfirst} % Indent first paragraph of sections
+% Commands for List of Abbreviations (from listofsymbols package)
+\let\symbol\newsym
+\let\abbr\newsub
+
+\RequirePackage{indentfirst} % Indent first paragraph of sections
 
 % ---------- siunitx configuration ----------
 \RequirePackage{siunitx}
@@ -108,9 +112,7 @@
 % Section Formatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Commands for List of Abbreviations (from listofsymbols package)
-\let\symbol\newsym
-\let\abbr\newsub
+
 
 % Line spacing and paragraph settings
 \setstretch{1.5}              % Set line spacing to 1.5
@@ -310,14 +312,15 @@
 \let\@whichsub=\@standardsub % Set default sub-title to standard sub-title
 
 %%%%%
-%%%%%   THESES TITLEPAGE
+%%%%%   THESES TITLEPAGE (TEMPLATE SHARED BY FYP & APID)
 %%%%%
 
 % Command for title page font styling (18pt, 22pt linespacing, bold, uppercase)
 \newcommand{\TitlePageFont}[1]{\textbf{\fontsize{18}{22}\selectfont\uppercase{#1}}}
 
-% Title page definition
-\def\titlepage{%
+% Internal template:
+% #1 = first requirement sentence line (FYP vs APID difference)
+\newcommand{\fin@titlepage@template}[1]{%
     \thispagestyle{empty}% No page numbers on title page
     \vspace*{23mm}% 60 mm from top of page (adjusted due to layout quirks)
     \begin{center}
@@ -329,22 +332,74 @@
         % Author block
         \TitlePageFont{\@author}% Author name
         \vfill % Vertical space
-        \TitlePageFont{THIS REPORT IS SUBMITTED IN FULFILMENT OF THE REQUIREMENT FOR THE}\\[0.5ex]
-        \TitlePageFont{BACHELOR’S DEGREE IN SCIENCE WITH HONORS} % Degree requirement statement
+
+        \TitlePageFont{#1}\\[0.5ex]
+        \TitlePageFont{BACHELOR’S DEGREE IN SCIENCE WITH HONORS}
+
         \vfill % Vertical space
 
         % Faculty and University block
         \TitlePageFont{FACULTY OF SCIENCE AND TECHNOLOGY}\\[0.5ex]
-        \TitlePageFont{UNIVERSITI MALAYSIA SABAH} \\[1ex]% University name
-        % Submission date block (at bottom, 60 mm from bottom edge due to \vspace*)
+        \TitlePageFont{UNIVERSITI MALAYSIA SABAH} \\[1ex]
+
+        % Submission date block
         \vfill
-        \TitlePageFont{\@submitdate}% Submission date
-        
+        \TitlePageFont{\@submitdate}%
+
     \end{center}
-    \vspace*{26mm}% 60 mm from last line to bottom of page (adjusted)
+    \vspace*{26mm}%
     \newpage
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front Matter SEQUENCES (TEMPLATE SHARED BY FYP & APID)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% FYP full front matter
+\newcommand{\fin@beforepreface@fyp}{%
+    \clearpage
+    \pagenumbering{roman}
+    \pagestyle{plain}
+    \pagestyle{headings}
+
+    \titlepage
+
+    \pengesahantesis
+
+    \declarationpage
+    \addcontentsline{toc}{chapter}{DECLARATION OF THESIS}
+
+    % \approvalpage
+    % \addcontentsline{toc}{chapter}{APPROVAL PAGE}
+
+    \testabstract
+    \addcontentsline{toc}{chapter}{ABSTRACT}
+
+    \abstractMalayu
+    \addcontentsline{toc}{chapter}{ABSTRAK}
+
+    \Acknowledgment
+    \addcontentsline{toc}{chapter}{ACKNOWLEDGMENT}
+}
+
+% APID reduced front matter
+\newcommand{\fin@beforepreface@apid}{%
+    \clearpage
+    \pagenumbering{roman}
+    \pagestyle{plain}
+    \pagestyle{headings}
+
+    \titlepage
+
+    \testabstract
+    \addcontentsline{toc}{chapter}{ABSTRACT}
+}
+
+% Optional default (so fin-common.sty alone still works)
+\providecommand{\beforepreface}{\fin@beforepreface@fyp}
+\providecommand{\titlepage}{%
+  \fin@titlepage@template{THIS REPORT IS SUBMITTED IN FULFILMENT OF THE REQUIREMENT FOR THE}%
+}
 %%%%%
 %%%%%   STATUS OF THESES - BORANG PENGESAHAN STATUS TESIS (Malay)
 %%%%%
@@ -620,34 +675,6 @@
     {\pagestyle{empty}\origdoublepage}% Empty page for double-sided documents
 }
 
-\def\beforepreface{
-    \clearpage
-    \pagenumbering{roman} % Roman page numbering for front matter
-    \pagestyle{plain}
-    \pagestyle{headings}
-
-    \titlepage          % PAGE 1: Title Page
-    %\addcontentsline{toc}{chapter}{TITLE} % Add Title Page to TOC
-
-    \pengesahantesis    % PAGE 2: Status Page (Pengesahan Status Tesis)
-    %\addcontentsline{toc}{chapter}{PENGESAHAN STATUS TESIS} % Add Status Page to TOC
-
-    \declarationpage     % PAGE 3: Declaration Page
-    \addcontentsline{toc}{chapter}{DECLARATION OF THESIS} % Add Declaration to TOC
-
-    %% We skip this unless required
-    % \approvalpage       % PAGE 4: Approval Page (Certification)
-    % \addcontentsline{toc}{chapter}{APPROVAL PAGE} % Add Approval Page to TOC
-
-    \testabstract       % PAGE 5: Abstract (English)
-    \addcontentsline{toc}{chapter}{ABSTRACT} % Add Abstract (English) to TOC
-
-    \abstractMalayu     % PAGE 6: Abstract (Malay)
-    \addcontentsline{toc}{chapter}{ABSTRAK} % Add Abstract (Malay) to TOC
-
-    \Acknowledgment     % PAGE 7: Acknowledgment Page
-    \addcontentsline{toc}{chapter}{ACKNOWLEDGMENT} % Add Acknowledgment to TOC
-}
 
 %%%%%
 %%%%%   Table of Contents, List of Tables, List of Figures, Abbreviations

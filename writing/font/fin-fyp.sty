@@ -1,0 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fin-fyp.sty
+% FYP Variant (uses fin-common)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{fin-fyp}[2025/03/14 v1.0 Fin Thesis Style (FYP)]
+\RequirePackage{font/fin-common}
+
+% Choose the FYP title page sentence + full preface
+\renewcommand{\titlepage}{
+  \fin@titlepage@template{THIS REPORT IS SUBMITTED IN FULFILMENT OF THE REQUIREMENT FOR THE}
+}
+
+\renewcommand{\beforepreface}{\fin@beforepreface@fyp}
+
