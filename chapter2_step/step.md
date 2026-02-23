@@ -131,18 +131,138 @@ End with a compact **Top 10 “best first” queries** list (most likely to work
 2. Paste the whole prompt into your agent.
 3. Copy queries from **Section C / D** straight into Google Scholar / Scopus advanced search.
 
-# Link
+---
 
-You then paste the keyword into the link
+# Index Scientific database
 
-https://scholar.google.com/
-https://www.scopus.com/pages/home#basic
+## What “Index Scientific Database” means
 
-Then, download the related abstract details
+An **indexed scientific database** is a platform that stores and organizes scholarly research articles so researchers can search them easily.
+
+Two common examples are:
+
+- Google Scholar — free academic search engine that indexes papers, theses, books, and conference articles.
+- Scopus — a large subscription-based research database used for academic analysis and citation tracking.
+
+These databases help you:
+
+- Find scientific papers quickly
+- Check article credibility
+- Access abstracts and citation info
+- Build literature reviews
+
+---
+
+## Paste the keyword you obtain from step 1, into the search links
+
+You start with a **keyword** related to your topic.
+
+### Example keywords
+
+- “machine learning in healthcare”
+- “climate change adaptation”
+- “renewable energy storage”
+
+Then:
+
+### A. Using Google Scholar
+
+1. Go to:
+   [https://scholar.google.com/](https://scholar.google.com/)
+2. Paste your keyword into the search bar.
+3. Press Enter.
+4. Browse the list of papers.
+
+**Tip:**
+Use quotation marks for exact phrases, e.g.
+`"artificial intelligence in education"`
+
+---
+
+### B. Using Scopus
+
+1. Open:
+   [https://www.scopus.com/pages/home#basic](https://www.scopus.com/pages/home#basic)
+2. Click **Document Search** or **Basic Search**.
+3. Enter your keyword.
+4. Apply filters if needed:
+   - Year
+   - Subject area
+   - Document type
+   - Author
+
+**Why Scopus is useful:**
+It provides strong filtering tools and citation tracking.
+
+---
+
+## 📄 3️⃣ Download the related abstract details
+
+An **abstract** is a short summary of a research article. It normally includes:
+
+- Purpose of the study
+- Methods used
+- Main findings
+- Conclusions
+
+### How to get the abstract:
+
+#### From Google Scholar
+
+1. Click the article title.
+2. You are redirected to:
+   - Journal website
+   - Publisher page
+   - PDF (if free)
+
+3. Copy the abstract text or download the PDF if available.
+
+#### From Scopus
+
+1. Click the article title.
+2. The abstract appears in the article page.
+3. Export or copy:
+   - Title
+   - Authors
+   - Abstract
+   - Keywords
+   - Citation info
+
+---
+
+## 📊 4️⃣ What “abstract details” usually include
+
+When your lecturer or project asks for abstract details, collect:
+
+- **Title**
+- **Author(s)**
+- **Year**
+- **Journal name**
+- **Abstract**
+- **Keywords**
+- **DOI (if available)**
+
+Example format:
+
+```
+Title: Artificial Intelligence in Healthcare
+Authors: Smith J., Lee A.
+Year: 2024
+Journal: Journal of Medical Systems
+Abstract: This study investigates...
+Keywords: AI, healthcare, machine learning
+DOI: xxxx
+```
+
+---
+
+# Automated filterition
+
+There is a dedicated code, but it may take time to revive it
 
 # For understanding,
 
-Lets try Notebook LLM to get a good overview
+Lets try Notebook LLM to get a good overview about a topic, simply paste all the abstract there
 
 # How to do literature review and can help find GAP!!!
 
@@ -318,6 +438,7 @@ The flowchart forces you to answer a set of “gap-revealing” questions at key
 7. **Human usefulness gate**
    - _Do explanations help an expert make decisions?_
      **Gap types:** “no user-centered evaluation”, “explanations not actionable”.
+8. **can be more reason, you can ask LLM, or do ur own research** this is not an exhaustive list
 
 Once you fill these gates using your domain’s evidence, you will naturally accumulate a **Gap Ledger** (the flowchart even has that node).
 
