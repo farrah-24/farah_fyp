@@ -1,4 +1,16 @@
-# Use LLM to generate key word
+# What this markdown all about?
+
+This markdown document is a **practical, end-to-end playbook** for conducting a modern literature review—especially when your topic sits at the intersection of a technical domain (your “asset” or application area) and **Explainable AI (XAI)**. Its purpose is not just to tell you _where to search_, but to show you **how to search systematically**, how to generate strong search queries quickly, how to collect evidence efficiently, and how to turn what you find into **defensible research gaps and research objectives**.
+
+At a first glance, this markdown is designed to feel like a **guided workflow** rather than a random set of notes. It starts from the moment you have a research title and you’re unsure what keywords to use. Instead of guessing search terms manually, it proposes using a **large language model (LLM)** as a structured assistant: you provide your exact title and domain context, and the LLM returns a carefully organized keyword bank plus **ready-to-paste advanced search strings** for major academic databases (Google Scholar, Scopus, Web of Science, IEEE Xplore, and more). This helps you move from vague ideas (“I need papers about XAI in my domain”) to precise, reproducible queries (“these exact boolean strings retrieve the most relevant literature”).
+
+From there, the markdown transitions into the real-world research task: **indexing scientific databases** and extracting **abstract details**. This matters because a literature review is built on evidence—titles, abstracts, authors, venues, years, keywords, and DOIs—not just opinions. The document provides a straightforward way to take the keywords generated in Step 1 and apply them in reputable search systems, then collect abstracts in a consistent format so you can compare papers, screen relevance, and build a clean dataset for synthesis.
+
+Finally, the markdown goes beyond “finding papers” and addresses what many students struggle with most: **how to find a research gap that is meaningful and defendable**. The included Mermaid flowchart is not decoration—it acts like a decision map and a “gap funnel.” It forces you to check the most common weak points in research (datasets, features, label quality, validation, generalization, faithfulness of explanations, physics/mechanism consistency, and human usefulness). In other words, it turns your literature review into a structured investigation: as you pass through each gate, you naturally create a **Gap Ledger**—a clear record of what the field has done, what it has not done well, and exactly where your thesis can contribute.
+
+In short, this markdown exists to give the reader a strong first impression: **this is not just a set of instructions—this is a repeatable research workflow**. It helps you go from _topic → keywords → database search → abstract collection → synthesis → gap discovery → research objectives_. If someone reads only the beginning, they should immediately understand that the document is meant to save time, increase rigor, and make the literature review process more systematic, transparent, and thesis-ready.
+
+# STEP 1: Use LLM to generate key word
 
 The first step is to use this **general “master prompt” ** and feed it to an agent to generate ** keyword lists + ready-to-use advanced search strings** (Google Scholar / Scopus / WoS / IEEE Xplore).
 
@@ -133,7 +145,7 @@ End with a compact **Top 10 “best first” queries** list (most likely to work
 
 ---
 
-# Index Scientific database
+# STEP 2: Index Scientific database
 
 ## What “Index Scientific Database” means
 
@@ -256,15 +268,15 @@ DOI: xxxx
 
 ---
 
-# Automated filterition
+# STEP 3: Automated filterition
 
 There is a dedicated code, but it may take time to revive it
 
-# For understanding,
+# STEP 4A: For understanding,
 
 Lets try Notebook LLM to get a good overview about a topic, simply paste all the abstract there
 
-# How to do literature review and can help find GAP!!!
+# STEP 4B: How to do literature review and can help find GAP!!!
 
 ---
 
@@ -406,7 +418,7 @@ flowchart TD
 
 This flow chart act lie **gap-funnel + decision ledger**, it can directly help you **surface defensible gaps** and turn them into **measurable research objectives**.
 
-# How the literature review helps to finds gaps
+# STEP 5: How the literature review helps to finds gaps
 
 The flowchart forces you to answer a set of “gap-revealing” questions at key gates. Each gate corresponds to a common gap category:
 
